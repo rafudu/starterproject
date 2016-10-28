@@ -11,7 +11,6 @@ var gulp     = require('gulp');
 var rimraf   = require('rimraf');
 var router   = require('front-router');
 var sequence = require('run-sequence');
-var bower = require('gulp-bower');
 var webpack = require('webpack-stream');
 
 // Check for --production flag
@@ -30,7 +29,7 @@ var paths = {
   // Sass will check these folders for files when you use @import.
   sass: [
     'src/scss',
-    'bower_components/foundation-sites/scss'
+    'node_modules/foundation-sites/scss'
   ],
   // These files include Foundation for Apps and its dependencies
   foundationJS: [
@@ -52,9 +51,6 @@ gulp.task('clean', function(cb) {
 // Cleans the public directory
 
 
-gulp.task('bower', function() {
-  return bower();
-});
 gulp.task('webpack', function() {
   return gulp.src('src/js/app.js')
     .pipe(webpack(require("./webpack.config.js")))
@@ -106,7 +102,7 @@ gulp.task('sass', function () {
 
 // Builds your entire app once, without starting a server
 gulp.task('build', function(cb) {
-  sequence('clean', 'webpack', 'bower', 'copy', 'sass',  cb);
+  sequence('clean', 'webpack', 'copy', 'sass',  cb);
 });
 
 // Default task: builds your app, starts a server, and recompiles assets when they change

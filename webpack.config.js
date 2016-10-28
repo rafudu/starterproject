@@ -6,11 +6,17 @@ module.exports = {
   {
     app:'./src/js/app.js'
   },
-  plugins: PROD ? [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: { warnings: false }
-    })
-  ] : [],
+  plugins:[
+      new webpack.DefinePlugin({
+          'process.env':{
+            'NODE_ENV': JSON.stringify('production')
+          }
+        }),
+      new webpack.optimize.UglifyJsPlugin({
+      compress:{
+        warnings: false
+      }
+    })],
 
   output: {
     filename: '[name].js',
