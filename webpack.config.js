@@ -25,7 +25,15 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?presets[]=es2015&presets[]=react&plugins[]=transform-object-rest-spread' }
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015', 'react'],
+          plugins: ['syntax-flow', 'transform-flow-strip-types', 'transform-object-rest-spread', 'transform-class-properties']
+        }
+      }
     ]
   }
 }
