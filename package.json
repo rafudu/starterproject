@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.16.0",
+    "foundation-sites": "^6.2.4",
     "react": "^15.2.1",
     "react-dom": "^15.3",
     "react-redux": "^4.4.5",
