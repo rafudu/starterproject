@@ -6,6 +6,9 @@ module.exports = {
   {
     app:'./src/js/app.js'
   },
+  resolve: {
+    modulesDirectories: ["node_modules", "node_modules/foundation-sites/dist", "node_modules/foundation-sites/dist/plugins"]
+  },
   plugins:[
       new webpack.DefinePlugin({
           'process.env':{
