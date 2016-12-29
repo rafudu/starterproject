@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp",
+    "production": "gulp --production",
     "build": "gulp build --production"
   },
   "author": "Raphael Martins",

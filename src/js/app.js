@@ -1,6 +1,6 @@
 /* @flow */
 document.getElementById("message").innerHTML = "Looks like we're all set!";
-
+require('foundation')
 const changeColors = function(){
   const elements: Array<HTMLElement> = Array.prototype.slice.call(document.getElementsByClassName("color")); // Little exagerated but just to test the flow plugins.
     elements.forEach((elm) => {

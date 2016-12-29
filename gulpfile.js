@@ -53,7 +53,7 @@ gulp.task('clean', function(cb) {
 
 gulp.task('webpack', function() {
   return gulp.src('src/js/app.js')
-    .pipe(webpack(require("./webpack.config.js")))
+    .pipe(webpack(require("./webpack.config.js")(isProduction)))
     .pipe(gulp.dest('dist/js'));
 });
 

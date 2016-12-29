@@ -1,7 +1,10 @@
 var webpack = require('webpack');
-var PROD = process.env.NODE_ENV == "production";
-
-module.exports = {
+const productionPlugins  = [new webpack.optimize.UglifyJsPlugin({
+compress:{
+  warnings: false
+}
+})]
+const config = {
   entry:
   {
     app:'./src/js/app.js'
@@ -12,14 +15,9 @@ module.exports = {
   plugins:[
       new webpack.DefinePlugin({
           'process.env':{
-            'NODE_ENV': JSON.stringify('production')
+            'NODE_ENV': JSON.stringify('development')
           }
-        }),
-      new webpack.optimize.UglifyJsPlugin({
-      compress:{
-        warnings: false
-      }
-    })],
+        })],
 
   output: {
     filename: '[name].js',
@@ -39,4 +37,11 @@ module.exports = {
       }
     ]
   }
+}
+module.exports = function(isProduction){
+  let _config = Object.assign({}, config)
+  if(isProduction) {
+    _config.plugins = [..._config.plugins, ...productionPlugins]
+  }
+  return _config;
 }
