@@ -13,4 +13,4 @@ By default the entry points for the JS and SCSS are `app.js` and `app.scss`. You
 - Webpack / Babel:
 
   - Presets: ES2015, React
-  - Plugins: flow-syntax, transform-flow-strip-types, object-transform-rest-spread, transform-class-properties
+  - Plugins: object-transform-rest-spread, transform-class-properties

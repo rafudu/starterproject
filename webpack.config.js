@@ -32,7 +32,7 @@ const config = {
         loader: 'babel-loader',
         query: {
           presets: ['es2015', 'react'],
-          plugins: ['syntax-flow', 'transform-flow-strip-types', 'transform-object-rest-spread', 'transform-class-properties']
+          plugins: ['transform-object-rest-spread', 'transform-class-properties']
         }
       }
     ]
