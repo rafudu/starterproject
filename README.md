@@ -8,6 +8,7 @@ By default the entry points for the JS and SCSS are `app.js` and `app.scss`. You
 
 # Features:
 
+- ESLint (Airbnb Preset)
 - Sass
 - Foundation
 - Webpack / Babel:
